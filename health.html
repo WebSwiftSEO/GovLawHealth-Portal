@@ -3,14 +3,267 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Health Page</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="GovLawHealth Portal—Health Hub: Fast, fun, and problem-solving in 3 clicks!">
+    <meta name="keywords" content="health services, government, fast, fun, problem solving">
+    <meta name="author" content="GovLawHealth Team">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#00ffcc">
+    <title>🌀 Health Hub | GovLawHealth</title>
+    <meta property="og:title" content="Health Hub | GovLawHealth">
+    <meta property="og:description" content="Solve health issues fast with a smile—your laser-modern gov health portal!">
+    <meta property="og:url" content="https://webswiftseo.github.io/GovLawHealth-Portal/health.html">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%2300ffcc'/></svg>">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            text-align: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 2rem;
+            background: linear-gradient(90deg, #00ffcc, #ff00cc);
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(0, 255, 204, 0.5);
+        }
+        #joke {
+            font-size: 1rem;
+            color: #ffcc00;
+            background: #222;
+            padding: 10px;
+            border-radius: 10px;
+            margin: 10px auto;
+            max-width: 90%;
+            animation: fadeIn 2s;
+        }
+        @keyframes fadeIn { 0% { opacity: 0; } 100% { opacity: 1; } }
+        nav {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 255, 204, 0.3);
+            margin-bottom: 20px;
+        }
+        nav a {
+            color: #00ffcc;
+            text-decoration: none;
+            font-size: 1.2rem;
+            margin: 0 15px;
+            transition: all 0.3s ease;
+        }
+        nav a:hover { color: #ff00cc; text-shadow: 0 0 15px #ff00cc; }
+        .quick-solve {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .solve-btn {
+            background: linear-gradient(45deg, #00ffcc, #00aaff);
+            border: none;
+            padding: 15px;
+            font-size: 1.1rem;
+            border-radius: 10px;
+            color: #fff;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(0, 255, 204, 0.5);
+            transition: all 0.3s ease;
+            width: 100%;
+            max-width: 250px;
+        }
+        .solve-btn:hover {
+            background: linear-gradient(45deg, #ff00cc, #00ccff);
+            box-shadow: 0 0 25px rgba(255, 0, 204, 0.7);
+        }
+        .section {
+            margin: 20px auto;
+            width: 90%;
+            max-width: 800px;
+            background: #222;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 255, 204, 0.2);
+        }
+        .section h2 {
+            font-size: 1.5rem;
+            color: #00ffcc;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        .section h2:hover { color: #ff00cc; }
+        .content {
+            display: none;
+            font-size: 1rem;
+            color: #ccc;
+            background: #333;
+            padding: 15px;
+            border-radius: 5px;
+            transition: all 0.5s ease;
+        }
+        .content.active { display: block; }
+        .smiley { font-size: 2rem; margin: 10px 0; animation: bounce 1s infinite; }
+        @keyframes bounce { 50% { transform: translateY(-10px); } }
+        .laser-btn {
+            background: linear-gradient(45deg, #00ffcc, #00aaff);
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.1rem;
+            border-radius: 25px;
+            color: #fff;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(0, 255, 204, 0.5);
+            transition: all 0.3s ease;
+            margin: 10px auto;
+            display: block;
+            width: 100%;
+            max-width: 300px;
+        }
+        .laser-btn:hover {
+            background: linear-gradient(45deg, #ff00cc, #00ccff);
+            box-shadow: 0 0 25px rgba(255, 0, 204, 0.7);
+        }
+        #status { font-size: 0.9rem; color: #00ffcc; margin: 10px 0; }
+        @media (min-width: 600px) {
+            h1 { font-size: 3rem; }
+            nav a { font-size: 1.5rem; }
+            .solve-btn { width: auto; }
+            .section h2 { font-size: 1.8rem; }
+            .laser-btn { width: auto; padding: 15px 35px; }
+        }
+    </style>
 </head>
 <body>
-    <div class="container health-page">
-        <h1>Health & Wellbeing</h1>
-        <p>Easy access to healthcare resources and guidance.</p>
-        <a href="index.html" class="back">← Back</a>
+    <h1>🌀 Health Hub</h1>
+    <div id="joke"></div>
+    <nav>
+        <a href="/GovLawHealth-Portal/index.html">Home</a>
+        <a href="/GovLawHealth-Portal/government.html">Government</a>
+        <a href="/GovLawHealth-Portal/law.html">Law</a>
+        <a href="#health">Health</a>
+    </nav>
+
+    <div class="quick-solve">
+        <button class="solve-btn" onclick="solveProblem('insurance')">Get Insurance 😊</button>
+        <button class="solve-btn" onclick="solveProblem('mental')">Mental Health Help 😂</button>
+        <button class="solve-btn" onclick="solveProblem('emergency')">Emergency Now! 🚑</button>
     </div>
+
+    <div class="section" id="insurance">
+        <h2 onclick="toggleContent('insurance-content')">Healthcare Enrollment</h2>
+        <div id="insurance-content" class="content">
+            <p>Sign up for insurance in 3 clicks—boom, you’re covered!</p>
+            <ul>
+                <li><a href="https://healthcare.gov">Apply Now</a></li>
+                <li>Check Eligibility</li>
+                <li>Get a Quote</li>
+            </ul>
+            <div class="smiley">😊</div>
+        </div>
+    </div>
+
+    <div class="section" id="mental">
+        <h2 onclick="toggleContent('mental-content')">Mental Health Support</h2>
+        <div id="mental-content" class="content">
+            <p>Feeling blue? Help’s here—laugh it off!</p>
+            <ul>
+                <li><a href="https://samhsa.gov">Find a Counselor</a></li>
+                <li>24/7 Chat Support</li>
+                <li>Stress-Busting Tips</li>
+            </ul>
+            <div class="smiley">😂</div>
+        </div>
+    </div>
+
+    <div class="section" id="emergency">
+        <h2 onclick="toggleContent('emergency-content')">Emergency Services</h2>
+        <div id="emergency-content" class="content">
+            <p>Need help fast? We’ve got you—stay calm!</p>
+            <ul>
+                <li><a href="https://cdc.gov">Call 911 Guide</a></li>
+                <li>Local ER Finder</li>
+                <li>First Aid Tips</li>
+            </ul>
+            <div class="smiley">🚑</div>
+        </div>
+    </div>
+
+    <button class="laser-btn" id="shareBtn">🚀 Share This Hub</button>
+    <div id="status"></div>
+
+    <script>
+        // Random Jokes
+        const jokes = [
+            "Why don’t skeletons get sick? They’ve got no guts to worry about!",
+            "Health tip: Laugh daily—it’s cheaper than therapy!",
+            "Don’t stress—your heart’s just practicing for the disco!"
+        ];
+        const jokeDiv = document.getElementById('joke');
+        jokeDiv.textContent = jokes[Math.floor(Math.random() * jokes.length)];
+
+        // Toggle Expanding Text Boxes
+        function toggleContent(id) {
+            const content = document.getElementById(id);
+            content.classList.toggle('active');
+        }
+
+        // Quick Problem Solving
+        function solveProblem(type) {
+            const status = document.getElementById('status');
+            if (type === 'insurance') {
+                document.getElementById('insurance-content').classList.add('active');
+                status.textContent = '✅ Insurance sorted—smile, you’re covered!';
+            } else if (type === 'mental') {
+                document.getElementById('mental-content').classList.add('active');
+                status.textContent = '😂 Help’s here—laugh it off!';
+            } else if (type === 'emergency') {
+                document.getElementById('emergency-content').classList.add('active');
+                status.textContent = '🚑 Emergency handled—stay cool!';
+            }
+            setTimeout(() => status.textContent = '', 3000);
+        }
+
+        // PWA Service Worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(reg => console.log('SW registered'))
+                    .catch(err => console.log('SW failed:', err));
+            });
+        }
+
+        // Share Functionality
+        const shareBtn = document.getElementById('shareBtn');
+        const status = document.getElementById('status');
+        shareBtn.addEventListener('click', async () => {
+            const shareData = {
+                title: 'Health Hub | GovLawHealth',
+                text: '🌀 Solve health woes fast with a laugh—check this out!',
+                url: window.location.href
+            };
+            if (navigator.share) {
+                try {
+                    await navigator.share(shareData);
+                    status.textContent = '✅ Shared the health vibes!';
+                } catch (err) {
+                    status.textContent = '❌ Share canceled.';
+                }
+            } else {
+                status.textContent = '⚠️ Sharing not supported.';
+            }
+            setTimeout(() => status.textContent = '', 3000);
+        });
+    </script>
 </body>
 </html>
