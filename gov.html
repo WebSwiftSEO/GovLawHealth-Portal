@@ -11,7 +11,7 @@
     <title>🌀 Government Hub | GovLawHealth</title>
     <meta property="og:title" content="Government Hub | GovLawHealth">
     <meta property="og:description" content="Solve gov issues fast with a smile—your laser-modern portal!">
-    <meta property="og:url" content="https://webswiftseo.github.io/GovLawHealth-Portal/government.html">
+    <meta property="og:url" content="https://webswiftseo.github.io/GovLawHealth-Portal/gov.html">
     <meta property="og:type" content="website">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%2300ffcc'/></svg>">
     <link rel="manifest" href="/manifest.json">
@@ -135,12 +135,52 @@
             box-shadow: 0 0 25px rgba(255, 0, 204, 0.7);
         }
         #status { font-size: 0.9rem; color: #00ffcc; margin: 10px 0; }
+        footer {
+            margin-top: 40px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .social-links a {
+            color: #00ffcc;
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        .social-links a:hover {
+            color: #ff00cc;
+            transform: scale(1.2) rotate(10deg);
+            text-shadow: 0 0 15px #ff00cc;
+        }
+        .gov-heads {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .gov-figure {
+            font-size: 1rem;
+            padding: 10px;
+            background: #222;
+            border-radius: 10px;
+            animation: pulse 2s infinite;
+            width: 100%;
+            max-width: 200px;
+        }
+        @keyframes pulse { 50% { box-shadow: 0 0 15px rgba(0, 255, 204, 0.5); } }
         @media (min-width: 600px) {
             h1 { font-size: 3rem; }
             nav a { font-size: 1.5rem; }
             .solve-btn { width: auto; }
             .section h2 { font-size: 1.8rem; }
             .laser-btn { width: auto; padding: 15px 35px; }
+            .gov-figure { width: auto; }
         }
     </style>
 </head>
@@ -148,10 +188,10 @@
     <h1>🌀 Government Hub</h1>
     <div id="joke"></div>
     <nav>
-        <a href="/GovLawHealth-Portal/index.html">Home</a>
-        <a href="#government">Government</a>
-        <a href="/GovLawHealth-Portal/law.html">Law</a>
-        <a href="/GovLawHealth-Portal/health.html">Health</a>
+        <a href="https://webswiftseo.github.io/GovLawHealth-Portal/">Home</a>
+        <a href="https://webswiftseo.github.io/GovLawHealth-Portal/gov.html">Government</a>
+        <a href="https://webswiftseo.github.io/GovLawHealth-Portal/law.html">Law</a>
+        <a href="https://webswiftseo.github.io/GovLawHealth-Portal/health.html">Health</a>
     </nav>
 
     <div class="quick-solve">
@@ -202,8 +242,23 @@
     <button class="laser-btn" id="shareBtn">🚀 Share This Hub</button>
     <div id="status"></div>
 
+    <footer>
+        <div class="social-links">
+            <a href="https://twitter.com" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://instagram.com" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://youtube.com" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+            <a href="https://tiktok.com" target="_blank" title="TikTok"><i class="fab fa-tiktok"></i></a>
+        </div>
+        <div class="gov-heads">
+            <div class="gov-figure" id="head1">Head of State: [Update Name]</div>
+            <div class="gov-figure" id="head2">Prime Minister: [Update Name]</div>
+            <div class="gov-figure" id="head3">Health Minister: [Update Name]</div>
+        </div>
+    </footer>
+
     <script>
-        // Random Jokes
         const jokes = [
             "Taxes? More like snacks for the gov—pay up and smile!",
             "Voting’s easy—harder to pick a Netflix show!",
@@ -212,13 +267,11 @@
         const jokeDiv = document.getElementById('joke');
         jokeDiv.textContent = jokes[Math.floor(Math.random() * jokes.length)];
 
-        // Toggle Expanding Text Boxes
         function toggleContent(id) {
             const content = document.getElementById(id);
             content.classList.toggle('active');
         }
 
-        // Quick Problem Solving
         function solveProblem(type) {
             const status = document.getElementById('status');
             if (type === 'taxes') {
@@ -234,7 +287,6 @@
             setTimeout(() => status.textContent = '', 3000);
         }
 
-        // PWA Service Worker
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('/sw.js')
@@ -243,7 +295,6 @@
             });
         }
 
-        // Share Functionality
         const shareBtn = document.getElementById('shareBtn');
         const status = document.getElementById('status');
         shareBtn.addEventListener('click', async () => {
