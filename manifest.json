@@ -1,0 +1,19 @@
+{
+    "name": "GovLawHealth Portal",
+    "short_name": "GovLawHealth",
+    "description": "Your laser-modern hub for government, law, and health services—fast, fun, and problem-solving!",
+    "start_url": "/GovLawHealth-Portal/",
+    "display": "standalone",
+    "background_color": "#0f0f0f",
+    "theme_color": "#00ffcc",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='40' fill='%2300ffcc'/></svg>",
+            "sizes": "any",
+            "type": "image/svg+xml",
+            "purpose": "any maskable"
+        }
+    ],
+    "scope": "/GovLawHealth-Portal/"
+}
