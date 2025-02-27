@@ -182,6 +182,37 @@
             .laser-btn { width: auto; padding: 15px 35px; }
             .gov-figure { width: auto; }
         }
+               .search-container {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px;
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+        }
+        .search-bar {
+            border: none;
+            padding: 8px;
+            border-radius: 20px;
+            outline: none;
+            background: transparent;
+            color: white;
+            font-size: 1rem;
+            width: 200px;
+        }
+        .search-btn {
+            background: #00ffcc;
+            border: none;
+            color: black;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-left: 5px;
+        }
     </style>
 </head>
 <body>
@@ -260,6 +291,9 @@
         <a href="https://webswiftseo.github.io/GovLawHealth-Portal/">Home</a>
             </nav>
         </div>
+        <div class="search-container">
+            <input type="text" id="search" class="search-bar" placeholder="🔍 Search coming soon...">
+        <button onclick="performSearch()" class="search-btn">Go</button>
     </footer>
 
     <script>
